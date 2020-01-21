@@ -1,0 +1,46 @@
+{
+  "name": "eskomdiscordbot",
+  "version": "1.0.0",
+  "description": "Discord bot to post notifications to discord users if there will be a power outage scheduled by eskom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.ts"
+  },
+  "author": "LaGgY",
+  "license": "ISC",
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules",
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": true,
+    "execMap": {
+      "ts": "node --require ts-node/register"
+    },
+    "watch": [
+      "src/"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,json,ts",
+    "exec": "bash -c 'rm -rf ./build/* && tsc && export $(grep -v '^#' .env | xargs) && node ./dist/index.js'"
+  },
+  "dependencies": {
+    "cron": "^1.7.2",
+    "discord.js": "^11.5.1",
+    "eskom-loadshedding-api": "^0.1.3",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
