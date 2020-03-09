@@ -1,4 +1,4 @@
-# eskomDiscordBot
+# eskomDiscordBot (Work-In-Progress)
 a *Nice to have* **Discord Bot** to notify South African users when there would be loadshedding in their area, sending out an alert x min before it is scheduled.
 
 This integrates with: [PolarizedIons/eskom-loadshedding-api](https://github.com/PolarizedIons/eskom-loadshedding-api)
